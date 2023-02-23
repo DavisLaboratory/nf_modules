@@ -1,20 +1,29 @@
-process RUN_XXX {
+process RUN_FASTQC {
+    cpus 2
+    memory "2.G"
+    time {"30.m" * task.attempt}
+    container "quay.io/biocontainers/fastqc:0.11.9--0"
+    tag "$sample"
+
+
+    // https://www.nextflow.io/docs/latest/process.html?highlight=retry#dynamic-computing-resources 
+    errorStrategy { task.exitStatus in 137..140 ? 'retry' : 'terminate' }
+    maxRetries 3
     
-    cpus 1
-    memory "1.G"
-    time "30.m"
-    container "quay.io/foo/bar:tag"
 
     input:
-    tuple val(sample), path(reads)
+    tuple val(sample), path(reads) // 
+
 
     output:
-    tuple val(sample), path("tr_*")
+    path(output)
+    // tuple val(sample), path(output) 
+
 
     script:
-    foo=bar
+    output = "${sample}_fastqc"
     """
-    XXX ${reads}
+    mkdir -p $output
+    fastqc -o $output -t $task.cpus $reads
     """
-
 }
