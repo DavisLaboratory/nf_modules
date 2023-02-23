@@ -3,18 +3,36 @@
 Nextflow modules for use in data processing pipelines
 
 
+## How to use
 
+- Clone this repo to a suitable location (e.g., a lab-share)
+- within your `params.config` file for a nextflow pipeline add the following line
+
+```
+ module_dir = "/path/to/nf_modules"   
+```
+
+- Import modules within main.nf as follows
+
+```nextflow
+include {MY_MODULE} from "${params.module_dir}/my_module"
+```
 
 
 ## Adding a new module
 
-### Create a new branch
+- Create a new branch for the new module
 
-```
+```bash
 git branch <module-name>
 
 cp -r template <module-name>
 ```
+
+- Write ya code
+- Test yer code
+- Write a pull request (get someone else to review)
+- $$$
 
 ### Edit `main.nf` and `meta.yml`
 
