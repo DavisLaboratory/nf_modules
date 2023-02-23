@@ -1,25 +1,21 @@
-name: fastqc
-description: Run basic quality control checks on fastq data
+name:
+description:
 tools:
-  - fastqc:
-      description: FastQC aims to provide a simple way to do some quality 
-        control checks on raw sequence data coming from high throughput 
-        sequencing pipelines. It provides a modular set of analyses which
-        you can use to give a quick impression of whether your data has any
-        problems of which you should be aware before doing any further analysis.
-      homepage: https://www.bioinformatics.babraham.ac.uk/projects/fastqc/
-      docs: https://www.bioinformatics.babraham.ac.uk/projects/fastqc/Help/
+  - tool_a:
+      homepage:
 input:
-  - sample:
-      type: val 
-      decsription: Sample identifier
-  - reads:
-      type: file
-      decsription: Input fastq files
+  - a:
+    type: 
+    decsription:
+  - b:
+    type: 
+    decsription:
 output:
-  - output:
-    type: path
-    decsription: Directory containing fastqc results, 
-      fastqc.html and fastqc.zip
+  - a:
+    type: 
+    decsription:
+  - b:
+    type: 
+    decsription:
 authors: 
-  - "@samleenz"
+  - "@gitname"
