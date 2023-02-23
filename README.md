@@ -34,7 +34,6 @@ cp -r template <module-name>
 - Write a pull request (get someone else to review)
 - $$$
 
-### Edit `main.nf` and `meta.yml`
 
 ## Acknowledgements
 
