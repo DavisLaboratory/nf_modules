@@ -1,0 +1,18 @@
+name: multiqc
+description:
+tools:
+  - multiqc:
+      description: Aggregate results from bioinformatics analyses across many
+       samples into a single report
+      homepage: https://multiqc.info/
+      docs: https://multiqc.info/docs/
+input:
+  - dirs:
+      type: path 
+      decsription: List of fastqc dirs to extract QC from
+output:
+  - output:
+      type: path
+      decsription: output directory with multiqc results
+authors: 
+  - "@samleenz"
