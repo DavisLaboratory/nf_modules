@@ -1,0 +1,21 @@
+name: salmon_index
+description: Generate the salmon index based on a transcriptome file
+tools:
+  - salmon:
+      homepage: https://combine-lab.github.io/salmon
+      docs: https://combine-lab.github.io/salmon
+input:
+  - tx_ver:
+      type: val
+      decsription: character that describes which transcriptome version is 
+        being used 
+  - txome:
+      type: path
+      decsription: Transcriptome file to index (*.fa.gz file)
+output:
+  - idx:
+      type: path 
+      decsription: Directory containing the salmon index,
+      name 
+authors: 
+  - "@samleenz"
