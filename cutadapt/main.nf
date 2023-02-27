@@ -9,7 +9,7 @@ process RUN_TRIM_READS {
     tuple val(sample), path(reads)
 
     output:
-    tuple val(sample), [path(out1), path(out2)]
+    tuple val(sample), path("tr_*")
 
     script:
     out1 = "tr_${reads[0]}"
