@@ -3,7 +3,7 @@ process RUN_SALMON_INDEX {
     memory "24.G"
     time "2.h"
     container "hub.docker.com/combinelab/salmon:1.10.0"
-    storeDir "$params.salmonDir"
+    storeDir "$params.store_dir"
 
     input:
     tuple val(tx_ver), path(txome)
