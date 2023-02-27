@@ -1,7 +1,7 @@
 process RUN_SALMON_QUANT {
     cpus 4
-    memory "16.G"
-    time "1.h"
+    memory "8.G"
+    time "30.m"
     container "combinelab/salmon:1.10.0"
     tag "$sample"
 
