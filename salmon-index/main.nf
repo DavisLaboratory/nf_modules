@@ -6,7 +6,8 @@ process RUN_SALMON_INDEX {
     storeDir "$params.store_dir"
 
     input:
-    tuple val(tx_ver), path(txome)
+    val(tx_ver)
+    path(txome)
 
     output:
     path(idx)
