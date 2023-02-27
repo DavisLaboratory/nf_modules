@@ -2,7 +2,7 @@ process RUN_SALMON_INDEX {
     cpus 4
     memory "24.G"
     time "2.h"
-    container "hub.docker.com/combinelab/salmon:1.10.0"
+    container "combinelab/salmon:1.10.0"
     storeDir "$params.store_dir"
 
     input:
