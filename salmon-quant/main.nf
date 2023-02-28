@@ -4,20 +4,19 @@ process RUN_SALMON_QUANT {
     time "30.m"
     container "combinelab/salmon:1.10.0"
     tag "$sample"
+    publishDir "results/salmon", mode: 'symlink', saveAs: { filename -> "${sample}_$filename" }
+
 
     input:
     tuple val(sample), path(reads)
     path(salmon_idx)
 
     output:
-    tuple(
-        path("${output}/quant.sf")
-        path("${output}/cmd_info.json")
-        path("${output}/aux_info")
-    )
+        path(output)
+    
 
     script:
-    output="quant/${sample}_quant"
+    output= "quant"
     """
     salmon quant \
       -i ${salmon_idx} \
