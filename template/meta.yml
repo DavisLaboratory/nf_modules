@@ -5,17 +5,17 @@ tools:
       homepage:
 input:
   - a:
-    type: 
-    decsription:
+      type: 
+      decsription:
   - b:
-    type: 
-    decsription:
+      type: 
+      decsription:
 output:
   - a:
-    type: 
-    decsription:
+      type: 
+      decsription:
   - b:
-    type: 
-    decsription:
+      type: 
+      decsription:
 authors: 
   - "@gitname"
