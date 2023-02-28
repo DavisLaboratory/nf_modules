@@ -26,7 +26,7 @@ process RUN_STAR_GENOME_GENERATE {
          --genomeDir $index \
          --genomeFastaFiles $genome \
          --sjdbGTFfile $gtf \
-         --sjdbOverhanf $overhang
+         --sjdbOverhang $overhang
     """
 
 }
