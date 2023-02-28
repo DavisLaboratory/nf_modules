@@ -4,7 +4,7 @@ process RUN_SALMON_QUANT {
     time "30.m"
     container "combinelab/salmon:1.10.0"
     tag "$sample"
-    publishDir "results/salmon", mode: 'symlink', saveAs: { filename -> "${sample}_$filename" }
+    publishDir "results/${params.project}/salmon", mode: 'symlink', saveAs: { filename -> "${sample}_$filename" }
 
 
     input:
