@@ -21,7 +21,7 @@ process RUN_STAR_GENOME_GENERATE {
     """
     mkdir -p $index
 
-    echo  STAR --runMode genomeGenerate\
+    STAR --runMode genomeGenerate \
          --runThreadN $task.cpus \
          --genomeDir $index \
          --genomeFastaFiles $genome \
