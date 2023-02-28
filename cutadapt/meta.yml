@@ -1,0 +1,23 @@
+name: TRIM_READS
+description: Preform reading trimming of low quality sequences (phred < 20) 
+  and Illumina universal adapters (AGATCGGAAGAG)
+tools:
+  - cutadapt:
+      homepage: https://github.com/marcelm/cutadapt
+      docs: https://cutadapt.readthedocs.io/en/stable/guide.html
+input:
+  - sample:
+      type: val 
+      decsription: Sample identifier
+  - reads:
+      type: file
+      decsription: Input fastq files
+output:
+  - sample:
+      type: val 
+      decsription: Sample identifier
+  - reads:
+      type: file
+      decsription: trimmed fastq files
+authors: 
+  - "@samleenz"
