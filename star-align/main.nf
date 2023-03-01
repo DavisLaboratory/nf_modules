@@ -20,8 +20,8 @@ process RUN_STAR_ALIGN {
     script:
     // println(junctions)
 
-    alignment = "Aligned.sortedByCoord.out.bam"
-    splice_junc = "SJ.out.tab"
+    alignment = "${sample}_Aligned.sortedByCoord.out.bam"
+    splice_junc = "${sample}_SJ.out.tab"
     overhang = read_len - 1
     pass2 = junctions.name != "NO_FILE" ? "--sjdbFileChrStartEnd ${junctions}" : ""
     // above, if the junctions input is default: make empty, otherwise add the junctions for 
@@ -32,6 +32,7 @@ process RUN_STAR_ALIGN {
          --readFilesIn ${reads[0]} ${reads[1]} \
          --outSAMtype BAM SortedByCoordinate \
          --readFilesCommand zcat \
+         --outFileNamePrefix ${sample}_ \
          --sjdbOverhang $overhang \
          --alignSJDBoverhangMin 1 \
          --alignSJoverhangMin 8 \
