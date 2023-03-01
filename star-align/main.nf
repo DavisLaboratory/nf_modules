@@ -16,12 +16,14 @@ process RUN_STAR_ALIGN {
     output:
     tuple val(sample), path(alignment)
     path(splice_junc)
+    path(log)
 
     script:
     // println(junctions)
 
     alignment = "${sample}_Aligned.sortedByCoord.out.bam"
     splice_junc = "${sample}_SJ.out.tab"
+    log = "${sample}_Log.final.out"
     overhang = read_len - 1
     pass2 = junctions.name != "NO_FILE" ? "--sjdbFileChrStartEnd ${junctions}" : ""
     // above, if the junctions input is default: make empty, otherwise add the junctions for 
