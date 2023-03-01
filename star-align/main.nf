@@ -14,7 +14,7 @@ process RUN_STAR_ALIGN {
     path(junctions)
 
     output:
-    path(alignment)
+    tuple val(sample), path(alignment)
     path(splice_junc)
 
     script:
