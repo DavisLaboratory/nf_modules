@@ -1,0 +1,21 @@
+name:
+description:
+tools:
+  - tool_a:
+      homepage:
+input:
+  - a:
+      type: 
+      decsription:
+  - b:
+      type: 
+      decsription:
+output:
+  - a:
+      type: 
+      decsription:
+  - b:
+      type: 
+      decsription:
+authors: 
+  - "@gitname"
