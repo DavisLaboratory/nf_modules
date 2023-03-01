@@ -1,0 +1,25 @@
+name: star-index
+description: Generate the STAR genome indices. 
+tools:
+  - STAR:
+      homepage: https://github.com/alexdobin/STAR
+      docs: https://github.com/alexdobin/STAR/blob/master/doc/STARmanual.pdf
+input:
+  - genome:
+      type: path
+      decsription: Filepath for the Genome fasta file (*dna.primary_assembly.fa)
+  - gtf:
+      type: path
+      decsription: Filepath for the gtf file used for genome annotation 
+  - ens_ver:
+      type: val 
+      decsription: String for the ensembl version (e.g. ens108)
+  - read_len:
+      type: val
+      decsription: read length of the rnaseq reads. To set the sjdbOverhang param
+output:
+  - indec:
+      type: path
+      decsription: Location of the genome index directory
+authors: 
+  - "@samleenz"
