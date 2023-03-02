@@ -11,11 +11,11 @@ process RUN_FEATURECOUNTS {
 
     output:
     tuple val(sample), path(counts)
-    // path(fc_log)
+    path(fc_log)
 
     script:
     counts = "${sample}_fc.txt"
-    // fc_log = 
+    fc_log = "${sample}_fc.txt.summary"
     """
     featureCounts \
         -a $gtf \
