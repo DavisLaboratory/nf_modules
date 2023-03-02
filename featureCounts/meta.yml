@@ -1,0 +1,22 @@
+name:
+description:
+tools:
+  - featureCounts:
+      homepage:
+      docs: https://bioconductor.org/packages/release/bioc/vignettes/Rsubread/inst/doc/SubreadUsersGuide.pdf
+input:
+  - a:
+      type: 
+      decsription:
+  - b:
+      type: 
+      decsription:
+output:
+  - a:
+      type: 
+      decsription:
+  - b:
+      type: 
+      decsription:
+authors: 
+  - "@gitname"
