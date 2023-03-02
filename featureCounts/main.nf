@@ -26,7 +26,7 @@ process RUN_FEATURECOUNTS {
         -o ${sample}_fc.txt \
         $bam
 
-    echo "Geneid $sample" > $counts
+    printf "Geneid\t${sample}\n" > $counts
     cat ${sample}_fc.txt | cut -f1,7 | sed '1,2d' >> $counts
 
     """
