@@ -3,7 +3,7 @@ process RUN_FEATURECOUNTS {
     cpus 4
     memory "32.G"
     time "30.m"
-    container "quay.io/repository/biocontainers/subread:2.0.1--hed695b0_0"
+    container "quay.io/biocontainers/subread:2.0.1--hed695b0_0"
 
     input:
     tuple val(sample), path(bam)
