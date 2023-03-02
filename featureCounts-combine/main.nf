@@ -6,7 +6,7 @@ process RUN_FEATURECOUNTS_COMBINE {
     publishDir "results/${params.project}", mode: 'copy'
 
     input:
-    tuple path(counts)
+    tuple val(sample), path(counts)
 
     output:
     path(count_table)
