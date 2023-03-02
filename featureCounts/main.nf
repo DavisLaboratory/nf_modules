@@ -27,7 +27,7 @@ process RUN_FEATURECOUNTS {
         $bam
 
     echo "Geneid $sample" > $counts
-    cat $sample | cut -f1,7 | sed '1,2d' >> $counts
+    cat ${sample}_fc.txt | cut -f1,7 | sed '1,2d' >> $counts
 
     """
     // The final two bash commands here are used to get the fc output in a nice
