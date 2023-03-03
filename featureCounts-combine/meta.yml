@@ -1,0 +1,13 @@
+name: featureCounts-combine
+description: Collate feature counts outputs into a single file using bash
+input:
+  - counts:
+      type: path 
+      decsription: individual samples feature count files
+output:
+  - count_table:
+      type: path
+      decsription: Final count table wiht Geneid in column one and
+        all samples in subsequent columns. order of samples not guarenteed!
+authors: 
+  - "@samleenz"

@@ -1,0 +1,26 @@
+name: featureCounts
+description: Calculate gene level counts for a sample bam based on the input GTF
+tools:
+  - featureCounts:
+      homepage:
+      docs: https://bioconductor.org/packages/release/bioc/vignettes/Rsubread/inst/doc/SubreadUsersGuide.pdf
+input:
+  - sample:
+      type: val 
+      decsription: Sample identifier
+  - bam:
+      type: path
+      decsription: BAM file containing RNA-seq alignments 
+output:
+  - sample:
+      type: val
+      decsription: Sample identifier
+  - counts:
+      type: path
+      decsription: feature counts output file, .txt
+  - fc_log:
+      type: path 
+      decsription: the featureCounts summary file, to pass through
+        to multiQC
+authors: 
+  - "@gitname"
