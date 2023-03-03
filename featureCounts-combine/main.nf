@@ -19,7 +19,7 @@ process RUN_FEATURECOUNTS_COMBINE {
 
     # store the counts without IDs in a tmp file for each
     for file in $counts; do
-        cut -f2 $file > ${file}.tmp
+        cut -f2 \$file > \${file}.tmp
     done
 
     # put them all into a single file
