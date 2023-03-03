@@ -1,5 +1,5 @@
-name:
-description:
+name: featureCounts
+description: Calculate gene level counts for a sample bam based on the input GTF
 tools:
   - featureCounts:
       homepage:
