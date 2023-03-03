@@ -11,7 +11,8 @@ process RUN_FEATURECOUNTS {
     path(gtf)
 
     output:
-    tuple val(sample), path(counts)
+    // tuple val(sample), path(counts)
+    path(counts)
     path(fc_log)
 
     script:
