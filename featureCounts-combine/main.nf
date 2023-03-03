@@ -23,7 +23,7 @@ process RUN_FEATURECOUNTS_COMBINE {
     done
 
     # put them all into a single file
-    paste ensg.txt ${counts}.tmp > $count_table
+    paste ensg.txt *txt.tmp > $count_table
     """
 
 }
