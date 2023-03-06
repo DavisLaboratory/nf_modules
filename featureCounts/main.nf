@@ -22,7 +22,7 @@ process RUN_FEATURECOUNTS {
     featureCounts \
         -a $gtf \
         -g gene_id \
-        -M \ # allow multimapping reads to count (should be an optional)
+        -M \
         -p \
         -T $task.cpus \
         -o ${sample}_fc.txt \
