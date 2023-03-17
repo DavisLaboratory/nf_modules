@@ -25,7 +25,7 @@ include {MY_MODULE} from "${params.module_dir}/my_module"
 
 ```bash
 git branch <module-name>
-git checkout fastqc
+git checkout <module-name>
 
 cp -r template <module-name>
 ```
