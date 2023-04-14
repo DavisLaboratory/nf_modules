@@ -22,7 +22,6 @@ process RUN_FEATURECOUNTS {
     featureCounts \
         -a $gtf \
         -g gene_id \
-        -M \
         -p \
         -T $task.cpus \
         -o ${sample}_fc.txt \
