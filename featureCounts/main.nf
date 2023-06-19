@@ -2,7 +2,7 @@ process RUN_FEATURECOUNTS {
     
     cpus 4
     memory "32.G"
-    time "30.m"
+    time "1.h"
     container "quay.io/biocontainers/subread:2.0.1--hed695b0_0"
     tag "$sample"
 
