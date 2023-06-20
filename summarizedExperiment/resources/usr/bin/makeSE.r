@@ -13,7 +13,6 @@ parser <- ArgumentParser()
 # 1. counts file
 # 2. sample annotation file
 # 3. GTF file
-# 4. project name
 
 parser$add_argument(
     "-c", "--counts", 
@@ -32,13 +31,6 @@ parser$add_argument(
 parser$add_argument(
     "-g", "--gtf", 
     help = "gtf file", 
-    type = "character", 
-    required = TRUE
-    )
-
-parser$add_argument(
-    "-p", "--project", 
-    help = "project name", 
     type = "character", 
     required = TRUE
     )

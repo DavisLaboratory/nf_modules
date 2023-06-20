@@ -11,11 +11,11 @@ process RUN_SUMMARIZED_EXPERIMENT {
     path(samplesheet)
 
     output:
-    path(SE)
+    path("SE.rds")
 
     script:
     """
-    makeSE.R ${counts} ${gtf} ${samplesheet}
+    makeSE.R -c ${counts} -s ${samplesheet} -g ${gtf}
     """
 
 }
