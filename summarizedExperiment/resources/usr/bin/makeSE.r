@@ -41,7 +41,11 @@ args <- parser$parse_args()
 
  
 # read in sample data 
-annot <- read.csv(args$sample_annotation, stringsAsFactors = FALSE)
+annot <- read.csv(
+  args$sample_annotation, 
+  stringsAsFactors = FALSE,
+  row.names = "sample"
+  )
 
 # read in count data
 counts <- read.delim(
@@ -69,7 +73,7 @@ rownames(gene_annotations) <- gene_annotations$gene_id
 gene_annotations$gene_id <- NULL
 
 stopifnot(
-  "gene IDs do not match" = all(rownames(counts) %in% rownames(gene_annotations2))
+  "gene IDs do not match" = all(rownames(counts) %in% rownames(gene_annotations))
   )
 
 # add metadata

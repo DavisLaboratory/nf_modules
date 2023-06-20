@@ -10,12 +10,12 @@ input:
   - counts: 
       type: path
       decsription: feature counts output file, .txt
-  - gtf:
-      type: value 
-      decsription: GTF file used to generate the counts
   - sampletable:
       type: value 
       decsription: csv file containing sample information
+    - gtf:
+      type: value 
+      decsription: GTF file used to generate the counts
 output:
   - SE:
       type: path
