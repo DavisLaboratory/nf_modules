@@ -1,10 +1,13 @@
 process RUN_FEATURECOUNTS {
     
-    cpus 4
-    memory "32.G"
-    time "1.h"
+    cpus {4 * task.attempt}
+    memory {32.G * task.attempt}
+    time {1.h * task.attempt}
     container "quay.io/biocontainers/subread:2.0.1--hed695b0_0"
     tag "$sample"
+
+    errorStrategy { task.exitStatus == 140 ? 'retry' : 'terminate' }
+    maxRetries 3
 
     input:
     tuple val(sample), path(bam)
