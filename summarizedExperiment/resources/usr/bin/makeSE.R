@@ -35,6 +35,13 @@ parser$add_argument(
     required = TRUE
     )
 
+parser$add_argument(
+    "-p", "--project", 
+    help = "gtf file", 
+    type = "character", 
+    required = TRUE
+    )
+
 # set args
 args <- parser$parse_args()
 
@@ -84,10 +91,10 @@ meta <- list(
 ## create SummarizedExperiment object
 se <- SummarizedExperiment(
     assays = list(counts = counts),
-    colData = annot,
-    rowData = gene_annotations,
+    colData = annot[colnames(counts), ],
+    rowData = gene_annotations[rownames(counts), ],
     metadata = meta
     )
 
 
-saveRDS(se, file = "SE.rds")
+saveRDS(se, file = paste(args$project, "SE.rds", sep = "_"))
