@@ -9,8 +9,6 @@ process RUN_SUMMARIZED_EXPERIMENT {
 
     input:
     path(counts)
-    path(samplesheet)
-    path(gtf)
 
     output:
     path(SE)
@@ -18,7 +16,7 @@ process RUN_SUMMARIZED_EXPERIMENT {
     script:
     SE = "${params.project}_SE.rds"
     """
-    makeSE.R -c ${counts} -s ${samplesheet} -g ${gtf}
+    makeSE.R -c ${counts} -s ${params.samplesheet} -g ${params.gtf} -p ${params.project}
     """
 
 }
