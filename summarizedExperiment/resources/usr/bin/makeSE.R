@@ -58,7 +58,8 @@ annot <- read.csv(
 counts <- read.delim(
     args$counts,
     stringsAsFactors = FALSE,
-    row.names = "Geneid"
+    row.names = "Geneid",
+    check.names = FALSE
     )
 
 
