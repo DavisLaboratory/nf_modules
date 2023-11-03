@@ -5,6 +5,7 @@ process RUN_STAR_ALIGN {
     time "4.h"
     container "quay.io/biocontainers/star:2.7.10b--h9ee0642_0"
     tag "$sample"
+    cache "lenient"
     // publishDir "results/${params.project}/aligned"
 
     input:
