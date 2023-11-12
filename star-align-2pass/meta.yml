@@ -1,0 +1,38 @@
+name: star-align-2pass
+description: This is a straight copy of 2pass, just to avoid the issue where the
+  running the star-align process twice by aliasing seems to not work with the
+  nextflow caching feature. 
+tools:
+  - STAR:
+      homepage: https://github.com/alexdobin/STAR
+      docs: https://github.com/alexdobin/STAR/blob/master/doc/STARmanual.pdf
+input:
+  - sample:
+      type: val 
+      decsription: Sample identifier
+  - reads:
+      type: path
+      decsription: Input fastq files, read 1 and read 2
+  - index: 
+      type: path
+      decsription: STAR genome index, output of star-index
+  - read_len:
+      type: val
+      decsription: read length of the rnaseq reads. To set the sjdbOverhang param
+  - junctions:
+      type: path
+      decsription: List of junction files for 2nd pass star mapping. 
+        If running for first pass alignment use input path("NO_FILE")
+        to avoid adding junctions
+output:
+  - alignment:
+      type: path
+      decsription: Primary alignment file from STAR
+  - splice_junc: 
+      type: path
+      decsription: SJ.out.tab file from STAR
+  - star_log: 
+      type: path
+      decsription: Log.Final.out file from STAR
+authors: 
+  - "@samleenz"

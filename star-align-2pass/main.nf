@@ -1,4 +1,4 @@
-process RUN_STAR_ALIGN {
+process RUN_STAR_ALIGN_2PASS {
     
     cpus 8
     memory "48.G"
@@ -12,7 +12,6 @@ process RUN_STAR_ALIGN {
     path(index)
     val(read_len)
     path(junctions)
-    val(npass)
 
     output:
     tuple val(sample), path(alignment)
@@ -22,9 +21,9 @@ process RUN_STAR_ALIGN {
     script:
     // println(junctions)
 
-    alignment = "${sample}_pass${npass}_Aligned.sortedByCoord.out.bam"
-    splice_junc = "${sample}_pass${npass}_SJ.out.tab"
-    star_log = "${sample}_pass${npass}_Log.final.out"
+    alignment = "${sample}_Aligned.sortedByCoord.out.bam"
+    splice_junc = "${sample}_SJ.out.tab"
+    star_log = "${sample}_Log.final.out"
     overhang = read_len - 1
     pass2 = junctions.name != "NO_FILE" ? "--sjdbFileChrStartEnd ${junctions}" : ""
     // above, if the junctions input is default: make empty, otherwise add the junctions for 
@@ -35,7 +34,7 @@ process RUN_STAR_ALIGN {
          --readFilesIn ${reads[0]} ${reads[1]} \
          --outSAMtype BAM SortedByCoordinate \
          --readFilesCommand zcat \
-         --outFileNamePrefix ${sample}_pass${npass}_ \
+         --outFileNamePrefix ${sample}_ \
          --sjdbOverhang $overhang \
          --alignSJDBoverhangMin 1 \
          --alignSJoverhangMin 8 \
