@@ -1,6 +1,6 @@
 process RUN_TRIM_READS {
     cpus 4
-    memory "1.G"
+    memory "8.G"
     time "15.m"
     container "quay.io/biocontainers/cutadapt:4.1--py310h1425a21_1"
     tag "$sample"
