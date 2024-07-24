@@ -3,7 +3,7 @@ process RUN_SUMMARIZED_EXPERIMENT {
     cpus 1
     memory "24.G"
     time "30.m"
-    container "samleenz/run_summarized_experiment:v1.0"
+    container "samleenz/run_summarized_experiment:v1.1"
     // module "R/4.2"
     publishDir "results/${params.project}", mode: 'copy'
 
