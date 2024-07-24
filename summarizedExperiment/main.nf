@@ -3,8 +3,8 @@ process RUN_SUMMARIZED_EXPERIMENT {
     cpus 1
     memory "24.G"
     time "30.m"
-    // container "quay.io/foo/bar:tag"
-    module "R/4.2"
+    container "samleenz/run_summarized_experiment:v1.0"
+    // module "R/4.2"
     publishDir "results/${params.project}", mode: 'copy'
 
     input:
