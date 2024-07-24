@@ -1,0 +1,25 @@
+name: summarizedExperiment
+description: Create a summarizedExperiment object from a the output of
+ featureCounts, the sample table, and the GTF
+tools:
+  - summarizedExperiment:
+      homepage:
+  - rtracklayer:
+      homepage:
+input:
+  - counts: 
+      type: path
+      decsription: feature counts output file, .txt
+  - sampletable:
+      type: value 
+      decsription: csv file containing sample information
+    - gtf:
+      type: value 
+      decsription: GTF file used to generate the counts
+output:
+  - SE:
+      type: path
+      decsription: rds of the summarizedExperiment object
+
+authors: 
+  - "@samleenz"
